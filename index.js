@@ -28,3 +28,17 @@ fruits.addEventListener("click", function(event){
     }
 })
 
+// filter 
+
+const filter = document.getElementById("filter");
+filter.addEventListener("keyup", function(event){
+const textEntered = event.target.value.toLowerCase();
+const fi = document.getElementsByClassName("fruit");
+for (let i = 0; i< fi.length; i++){
+    const cf = fi[i].firstChild.textContent.toLowerCase();
+    if(cf.indexOf(textEntered) === -1){
+       fi[i].style.display="none"
+    }
+
+}
+});
